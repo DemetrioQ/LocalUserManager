@@ -123,6 +123,6 @@ const saveUser = (data) =>{
 }
 
 //configure the server port
-app.listen(3000, () => { 
-    console.log("NPM Server is running on port 3000")
+app.listen(4500, () => { 
+    console.log("NPM Server is running on port 4500")
 })
