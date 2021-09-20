@@ -125,5 +125,5 @@ const saveUser = (data) =>{
 const port = process.env.PORT || 3005;
 //configure the server port
 app.listen(port, () => { 
-    console.log(`Server is running on port ${port}')
-})
+    console.log(`Server is running on port ${port}`)
+});

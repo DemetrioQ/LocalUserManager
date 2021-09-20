@@ -4,7 +4,7 @@
   "description": "INTEC API",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production node app.js"
+    "start": "NODE_ENV=production node ./app.js"
   },
   "author": "Demetrio Quiñones",
   "license": "ISC",
