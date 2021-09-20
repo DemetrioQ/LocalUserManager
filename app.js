@@ -122,7 +122,8 @@ const saveUser = (data) =>{
     fs.writeFileSync('users.json', stringfyData);
 }
 
+const port = process.env.PORT || 3005;
 //configure the server port
-app.listen(4500, () => { 
-    console.log("NPM Server is running on port 4500")
+app.listen(port, () => { 
+    console.log(`Server is running on port ${port}')
 })
