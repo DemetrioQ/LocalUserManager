@@ -1,6 +1,7 @@
 # Local User Manager
 
 Local user manager CRUD api with local json
+
 Demo: https://local-user-manager.herokuapp.com/
 
 ![Home Screen](https://user-images.githubusercontent.com/52639107/133956338-ca68ac27-3b6d-4eb4-b0ca-934c8f82190e.png)
