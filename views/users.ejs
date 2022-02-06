@@ -1,92 +1,103 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
-    <link rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css">
-    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css" />
+    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand"  href="/">Home</a>
-			<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-		  </nav>
-</head>
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </head>
 
-<style>
- 
-.hide-table-paddding{
-  text-align: justify;
-}
-a:hover{
-  color: white;
-}
-a{
-  color: white;
-}
-table{
-  text-align: justify;
-  align-content: center;
-  text-align: center;
-}
-tr.hide-table-padding td {
-  padding: 0;
-  margin: 0;
-}
-.expand-button {
-	position: relative;
-}
-</style>
-<body>
-	<% if(!users.length) { %>
-		<p class="text-center">No tiene usuarios registrados</p>
-	  <% } %>
-  <table class="table" width="100%"  cellspacing="0">
-    <thead class="thead-dark">
-      <th scope="col" class="th-sm">#</th> 
-      <th scope="col" class="th-sm">Username</th>
-      <th scope="col" class="th-sm">DisplayName</th> 
-      <th scope="col" class="th-sm">Action</th> 
-      
-    </thead>
-    <tbody>
-      <% for(var i=0; i < users.length; i++) { %>
-        <tr id="<%=users[i].id%>">          
-          <td class="accordion-toggle collapsed expand-button  " scope="row" data-toggle="collapse"  href="#collapse<%=i%>"><%= i+1%></td>
-          <td scope="row"  class="accordion-toggle collapsed " data-toggle="collapse"  href="#collapse<%=i%>"><%= users[i].username %> </td>
-          <td scope="row"  class="accordion-toggle collapsed " data-toggle="collapse"  href="#collapse<%=i%>"><%= users[i].displayname %> </td>
+  <style>
+    .hide-table-paddding {
+      text-align: justify;
+    }
+    a:hover {
+      color: white;
+    }
+    a {
+      color: white;
+    }
+    table {
+      text-align: justify;
+      align-content: center;
+      text-align: center;
+    }
+    tr.hide-table-padding td {
+      padding: 0;
+      margin: 0;
+    }
+    .expand-button {
+      position: relative;
+    }
+    /* .centered-div {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    } */
+    .centered-div {
+      display: flex;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <% if(!users.length) { %>
+    <div class="centered-div">No tiene usuarios registrados</div>
+    <% } else {%>
+    <table class="table" width="100%" cellspacing="0">
+      <thead class="thead-dark">
+        <th scope="col" class="th-sm">#</th>
+        <th scope="col" class="th-sm">Username</th>
+        <th scope="col" class="th-sm">DisplayName</th>
+        <th scope="col" class="th-sm">Action</th>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < users.length; i++) { %>
+        <tr id="<%=users[i].id%>">
+          <td class="accordion-toggle collapsed expand-button" scope="row" data-toggle="collapse" href="#collapse<%=i%>"><%= i+1%></td>
+          <td scope="row" class="accordion-toggle collapsed" data-toggle="collapse" href="#collapse<%=i%>"><%= users[i].username %></td>
+          <td scope="row" class="accordion-toggle collapsed" data-toggle="collapse" href="#collapse<%=i%>"><%= users[i].displayname %></td>
           <td>
-          <a class="btn btn-success edit"  href="/user/edit/<%=users[i].id%>">Edit</a>
-          <a class="btn btn-danger delete" id="<%=users[i].id%>" onclick="AreYouSure(this.id)">Delete</a>
+            <a class="btn btn-success edit" href="/user/edit/<%=users[i].id%>">Edit</a>
+            <a class="btn btn-danger delete" id="<%=users[i].id%>" onclick="AreYouSure(this.id)">Delete</a>
           </td>
         </tr>
-      <% } %>
-  </tbody>
-</table>
+        <% } %>
+      </tbody>
+    </table>
+    <% } %>
 
-
-<script>
-  function AreYouSure(id){ 
-    var r = confirm("Esta seguro de que desea eliminar este usuario?")
-    if (r == true) {
-        $.ajax({
-          url : 'user/delete',
-          method : 'delete',
-          data : {
-            id :id
-          },
-          success: function(response){
-            $(`#${id}`).remove();
-    }
-        })
-  	} 
-}
-</script>
-</body>
+    <script>
+      function AreYouSure(id) {
+        var r = confirm('Esta seguro de que desea eliminar este usuario?');
+        if (r == true) {
+          $.ajax({
+            url: 'user/delete',
+            method: 'delete',
+            data: {
+              id: id,
+            },
+            success: function (response) {
+              $(`#${id}`).remove();
+            },
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
